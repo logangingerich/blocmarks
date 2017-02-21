@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
-  get 'topics/index'
-
-  get 'topics/show'
-
-  get 'topics/new'
-
-  get 'topics/edit'
+  resources :topics
 
   devise_for :users
   get 'welcome/index'
 
-  get 'welcome/about'
+  get 'about' => 'welcome#about'
 
-  root 'welcome#index'
+  root 'topics#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
