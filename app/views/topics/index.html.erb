@@ -1,5 +1,5 @@
 <div class="index-container">
-  <h1>All Blocmarks</h1>
+  <h3 class="header">All Blocmarks</h3>
   <div class="row">
     <div class="col-md-8">
       <% @topics.each do |topic| %>
@@ -13,6 +13,7 @@
       <% end %>
     </div>
   </div>
+  <br>
   <div class="col-md-4">
     <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
   </div>

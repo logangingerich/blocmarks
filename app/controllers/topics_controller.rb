@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
 
     if @topic.save
       flash[:notice] = "Topic was saved."
-      redirect_to @topic
+      redirect_to action: :index
     else
       flash.now[:alert] = "There was an error saving the topic. Please try again."
       render :new
@@ -37,6 +37,19 @@ class TopicsController < ApplicationController
     else
       flash.now[:alert] = "There was an error deleting the topic."
       render :show
+    end
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    @topic.title = params[:topic][:title]
+
+    if @topic.save
+      flash[:notice] = "Topic was updated."
+      redirect_to action: :index
+    else
+      flash.now[:alert] = "There was an error saving the topic. Please try again."
+      render :edit
     end
   end
 
