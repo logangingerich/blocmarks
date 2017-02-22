@@ -1,0 +1,8 @@
+<h4>Bookmark</h4>
+<%= form_for [@topic, @bookmark] do |f| %>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control', placeholder: "Enter a new comment" %>
+  </div>
+  <%= f.submit "Save Bookmark", class: 'btn btn-default pull-right' %>
+<% end %>
