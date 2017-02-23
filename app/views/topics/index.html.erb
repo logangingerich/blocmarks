@@ -8,7 +8,9 @@
             <h4 class="media-heading">
               <%= link_to topic.title, topic %>
               <% topic.bookmarks.each do |bookmark| %>
-                <p><%= link_to bookmark.url, topic_bookmark_path(topic, bookmark) %></p>
+                <ul>
+                  <li><%= link_to bookmark.url, topic_bookmark_path(topic, bookmark) %></li>
+                </ul>
               <% end %>
             </h4>
           </div>

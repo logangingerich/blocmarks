@@ -2,7 +2,9 @@
   <%= @topic.title %> <br>
 </h1>
 <% @topic.bookmarks.each do |bookmark| %>
-  <p><%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %></p>
+  <ul>
+    <li><%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %></li>
+  </ul>
 <% end %>
 <div class="row">
   <div class="col-md-6">
