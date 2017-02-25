@@ -48,7 +48,7 @@ class BookmarksController < ApplicationController
 
     if @bookmark.destroy
       flash[:notice] = "Bookmark was successfully deleted."
-      redirect_to @bookmark.topic
+      redirect_to @topic
     else
       flash[:alert] = "There was an error deleting the bookmark. Please try again."
       redirect_to [@bookmark.topic, @bookmark]
