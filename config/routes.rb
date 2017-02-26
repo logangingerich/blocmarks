@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get :incoming, to: 'incoming#create'
+  post :incoming, to: 'incoming#create'
 
   resources :topics do
     resources :bookmarks, except: [:index]
