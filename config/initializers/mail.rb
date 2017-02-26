@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   address:           'smtp.mailgun.org',
   user_name:         ENV['MAILGUN_SMTP_LOGIN'],
   password:          ENV['MAILGUN_SMTP_PASSWORD'],
-  domain:            'https://floating-sands-93807.herokuapp.com/',
+  domain:            'floating-sands-93807.herokuapp.com/',
   authentication:    :plain,
   content_type:      'text/html'
 }
