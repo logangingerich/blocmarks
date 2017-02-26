@@ -6,8 +6,8 @@ class IncomingController < ApplicationController
     # Find the user by using params[:sender]
     #@user = User.find_by(email: params[:sender])
     # Find the topic by using params[:subject]
-    @topic = Topic.find_by(title: params[:subject])
-    @topic.save
+    #@topic = Topic.find_by(title: params[:subject])
+    #@topic.save
     # Assign the url to a variable after retreiving it from params["body-plain"]
     #@url = @topic.bookmarks.find_by(url: params["body-plain"])
     # Check if user is nil, if so, create and save a new user
