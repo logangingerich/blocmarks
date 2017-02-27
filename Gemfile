@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
