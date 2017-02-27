@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'incoming/create'
+
   post :incoming, to: 'incoming#create'
 
   resources :topics do
