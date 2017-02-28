@@ -3,7 +3,7 @@
 </h1>
 <% @topic.bookmarks.each do |bookmark| %>
   <ul>
-    <li><%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %></li>
+    <li><%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %><%= render partial: 'likes/like', locals: { bookmark: bookmark } %></li>
   </ul>
 <% end %>
 <div class="row">
