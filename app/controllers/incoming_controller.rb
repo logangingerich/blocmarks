@@ -21,6 +21,7 @@ class IncomingController < ApplicationController
 
     # Assign the url to a variable after retreiving it from params["body-plain"]
     @topic.bookmarks.create(url: params["body-plain"])
+    @bookmark.user = current_user
 
     head 200
   end
