@@ -4,24 +4,33 @@ class IncomingController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create]
 
   def create
-    # Find the user by using params[:sender]
+    find_or_create_user
+
+    find_or_create_topic
+
+    @topic.bookmarks.create(url: params["body-plain"])
+
+    head 200
+  end
+
+  private
+
+  def find_or_create_user
     @user = User.find_by(email: params[:sender])
 
     if @user.nil?
       @user = User.new(email: params[:sender], password: "password", password_confirmation: "password")
       @user.save
     end
-    # Find the topic by using params[:subject]
+  end
+
+  def find_or_create_topic
     @topic = Topic.find_by(title: params[:subject])
 
     if @topic.nil?
       @topic = Topic.new(title: params[:subject])
       @topic.save
     end
-
-    # Assign the url to a variable after retreiving it from params["body-plain"]
-    @topic.bookmarks.create(url: params["body-plain"])
-
-    head 200
   end
+
 end
