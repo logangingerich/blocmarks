@@ -8,7 +8,8 @@ class IncomingController < ApplicationController
 
     find_or_create_topic
 
-    @topic.bookmarks.create(url: params["body-plain"])
+    @bookmark = @topic.bookmarks.create(url: params["body-plain"])
+    @bookmark.user = @user
 
     head 200
   end
