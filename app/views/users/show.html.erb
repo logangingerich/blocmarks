@@ -1,0 +1,32 @@
+<div class="index-container">
+  <h3 class="header">My Blocmarks</h3>
+  <div class="row">
+    <div class="col-md-8">
+      <% @user_bookmarks.each do |bookmark| %>
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <%= link_to(bookmark.url, bookmark.url) %><%= render partial: 'likes/like', locals: { bookmark: bookmark } %></li>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="index-container">
+  <h3 class="header">My Likes</h3>
+  <div class="row">
+    <div class="col-md-8">
+      <% @liked_bookmarks.each do |like| %>
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <%= link_to(like.bookmark.url, like.bookmark.url) %><%= render partial: 'likes/like', locals: { bookmark: like.bookmark } %></li>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post :incoming, to: 'incoming#create'
 
   resources :topics do
-    resources :bookmarks, except: [:index] 
+    resources :bookmarks, except: [:index]
   end
 
   resources :bookmarks, except: [:index] do
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  get 'users/show'
   get 'welcome/index'
 
   get 'about' => 'welcome#about'
