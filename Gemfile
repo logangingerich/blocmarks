@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
+gem 'embedly'
 
 group :development, :test do
   gem 'byebug'

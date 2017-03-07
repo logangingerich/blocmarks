@@ -1,7 +1,13 @@
 class BookmarksController < ApplicationController
+  require 'embedly'
+  require 'json'
+
   def show
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    embedly_api = Embedly::API.new :key => '950f69d87fee4bd18b41563cda5fff74'
+    obj = embedly_api.extract :url => @bookmark.url
+    @image_thumb = obj.first.favicon_url
   end
 
   def new
